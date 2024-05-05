@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summarization</title>
+    <!-- You can link external stylesheets or add internal styles here -->
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            position: relative; /* Added position relative */
+            margin-bottom: 2%;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .home-button {
+            background-color: #3ca740;
+            color: white;
+            padding: 14px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            position: absolute; /* Added position absolute */
+            top: 20px; /* Adjusted top position */
+            right: 20px;
+            text-decoration: none;
+        }
+        .home-button:hover {
+            background-color: #45a049;
+        }
+
+        input[class="clear-response"] {
+            background-color: #e20c0cd0;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[class="clear-response"]:hover {
+            background-color: #910000;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <h1>Summarization</h1>
+    <a href="/" class="home-button">Home</a>
+    <p>Enter the text you want to summarize:</p>
+    <form action="/summarization" method="post" autocomplete="off">
+        <label for="document">Document:</label>
+        <textarea id="document" name="document" placeholder="Enter your text here...">{{ document }}</textarea>
+        <input type="submit" value="Summarize">
+    </form>
+    
+    <form action="/summarization" method="get">
+        <input class="clear-response" type="submit" value="Clear Response">
+    </form>
+</div>
+
+<!-- Display summarized text if available -->
+{% if document and summary %}
+<div class="container">
+    <h2>Summary:</h2>
+    <p id="summaryText">{{ summary }}</p>
+    <button onclick="copySummary()">Copy Summary</button>
+</div>
+{% endif %}
+<!-- Include external JavaScript file -->
+<script src="/static/summarization.js"></script>
+
+</body>
+</html>

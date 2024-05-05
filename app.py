@@ -257,7 +257,7 @@ def ocr():
             # Check if the file is an allowed image type
             if image_file and allowed_file(image_file.filename):
                 # Load image to analyze into a 'bytes' object
-                file_name="ocr_analysis"+ image_file.filename.split('.')[-1]
+                file_name="ocr_analysis."+ image_file.filename.split('.')[-1]
                 image_path = os.path.join('static', file_name)
                 print(image_path)
                 image_file.save(image_path)

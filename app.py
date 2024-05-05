@@ -103,7 +103,7 @@ def sentiment_analysis():
         if file:
             if file.filename != '':
                 # Save the file to a temporary location
-                file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+                file_path = os.path.join('static', file.filename)
                 file.save(file_path)
 
                 # Read the contents of the file

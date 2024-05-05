@@ -3,7 +3,7 @@ Jinja2
 Werkzeug
 azure-ai-textanalytics
 azure-core
-azure-ai-vision
+azure-ai-vision-imageanalysis
 pandas
 seaborn
 matplotlib

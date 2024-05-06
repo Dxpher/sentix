@@ -11,7 +11,7 @@ from azure.ai.vision.imageanalysis.models import VisualFeatures
 import matplotlib
 matplotlib.use('Agg')
 KEY = os.environ["LANG_KEY"]
-ENDPOINT = 'https://lang1234.cognitiveservices.azure.com/'
+ENDPOINT = os.environ["LANG_ENDPOINT"]
 
 app = Flask(__name__)
 # Define your routes
@@ -233,7 +233,7 @@ def ocr():
     if request.method == 'POST':
         try:
             # Retrieve Azure Computer Vision credentials from environment variables
-            endpoint_vision = 'https://vision1234.cognitiveservices.azure.com/'
+            endpoint_vision = os.environ["VISION_ENDPOINT"]
             key_vision = os.environ["VISION_KEY"]
 
             # Create an Image Analysis client

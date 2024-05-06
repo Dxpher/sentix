@@ -10,11 +10,10 @@ from azure.ai.vision.imageanalysis import ImageAnalysisClient
 from azure.ai.vision.imageanalysis.models import VisualFeatures
 import matplotlib
 matplotlib.use('Agg')
-KEY = '2732d37019cf49bbaee14ceae1040b4c'
+KEY = os.environ["LANG_KEY"]
 ENDPOINT = 'https://lang1234.cognitiveservices.azure.com/'
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = 'uploads'
 # Define your routes
 @app.route('/')
 def index():
@@ -207,7 +206,6 @@ def entity_linking():
 
             # Perform entity linking
             response = text_analytics_client.recognize_linked_entities(documents=[document])[0]
-            print(response)
             # Get the linked entities
             entities = []
             for entity in response.entities:
@@ -235,13 +233,13 @@ def ocr():
     if request.method == 'POST':
         try:
             # Retrieve Azure Computer Vision credentials from environment variables
-            endpoint = 'https://vision1234.cognitiveservices.azure.com/'
-            key = 'f11aecc9873449d893bedc3829a2145f'
+            endpoint_vision = 'https://vision1234.cognitiveservices.azure.com/'
+            key_vision = os.environ["VISION_KEY"]
 
             # Create an Image Analysis client
             client = ImageAnalysisClient(
-                endpoint=endpoint,
-                credential=AzureKeyCredential(key)
+                endpoint=endpoint_vision,
+                credential=AzureKeyCredential(key_vision)
             )
 
             # Check if an image file was uploaded

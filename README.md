@@ -1,5 +1,5 @@
-## sentix
-# Sentiment Analysis and OCR Web Application
+# sentix
+## Sentiment Analysis and OCR Web Application
 
 ## Overview
 

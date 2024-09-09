@@ -43,21 +43,21 @@ The application is hosted on Azure and uses Azure Cognitive Services for various
    git clone https://github.com/your-username/repo-name.git
    cd repo-name```
 2. **Create a virtual environment (optional)**:
-```bash
-python -m venv venv
-source venv/bin/activate   # On Windows use `venv\Scripts\activate`
-```
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # On Windows use `venv\Scripts\activate`
+   ```
 3. **Install dependencies**:
-```Install dependencies:
-pip install -r requirements.txt
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 4. **Set up environment variables: You will need to set up your Azure credentials for Text Analytics and Vision API**:
-```bash
-export LANG_KEY="your_azure_text_analytics_key"
-export LANG_ENDPOINT="your_azure_text_analytics_endpoint"
-export VISION_KEY="your_azure_vision_key"
-export VISION_ENDPOINT="your_azure_vision_endpoint"
-```
+   ```bash
+   export LANG_KEY="your_azure_text_analytics_key"
+   export LANG_ENDPOINT="your_azure_text_analytics_endpoint"
+   export VISION_KEY="your_azure_vision_key"
+   export VISION_ENDPOINT="your_azure_vision_endpoint"
+   ```
 5. **Run the application**:
    ```bash
    Run the app:
